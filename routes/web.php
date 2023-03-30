@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/register', 'App\Http\Controllers\RegisterController@index')->name('register.index');
 Route::post('/register', 'App\Http\Controllers\RegisterController@store')->name('register.store');
+
+Route::get('/login', 'App\Http\Controllers\LoginController@index')->name('login');
+Route::post('/login', 'App\Http\Controllers\LoginController@check_login')->name('login.check_login');
